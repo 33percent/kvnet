@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <title>Admin login</title>
+</head>
+
+<body>
+    <div class="container-fluid>">
+        <div class="row">
+            <div class='col-md-4 col-md-offset-4 text-left'>
+                <div class="text-center mylog">
+                    <img src="">
+                    <h1 class="page-header">Admin Login</h1>
+                    <form action="/admin/login" method="post">
+
+                        <label for="Username">Username :</label>
+                        <input type="text" name="email" required autocomplete="off" autofocus>
+                        <br>
+
+                        <label for="password">Password : </label>
+                            <input type="password" name="password" required autocomplete="off">
+                        <br>
+                        <br>
+                        <input type="submit" value="Login" class="btn ">
+                        <% if (error) { %>
+                          <p>Credentials are not correct. Please check.</p>
+                        <% } %>
+                    </form>
+                </div>
+
+            </div>
+</body>
+
+</html>
