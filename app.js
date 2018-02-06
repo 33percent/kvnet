@@ -10,7 +10,40 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
 var app = express();
+var ip = require('ip');
+var ipmodel = require('./models/ipstore');
+ipmodel.findOne({
+  'ip':ip.address()
+}, function(err, data) {
+  if (err) {
+    console.log(err);
+    // } else {
+  } else if(data != null){
 
+    var updater = {'times':(data.times+1),
+  time:new Date()};
+    var ipold = {
+      ip:ip.address()
+    };
+    ipmodel.findOneAndUpdate(ipold, updater, {upsert:true}, function(err, doc){
+    });
+  } else {
+    var ipofuser = new ipmodel({
+      ip: ip.address(),
+      time: new Date(),
+      times:0
+    });
+    ipofuser.save(function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+
+      }
+    })
+    // }
+
+  }
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
