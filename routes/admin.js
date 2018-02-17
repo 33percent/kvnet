@@ -50,10 +50,10 @@
   try{
     var newuser = new musers({
         name: "admin",
-        email: "admin@kvnet.in",
+        email: "sandeep",
         phone: '9994370099',
         passwordhash:'15978',
-        password:md5(md5("psychologypark") + '15978')
+        password:md5(md5("sandeep") + '15978')
     });
     console.log(newuser);
     newuser.save(function (err, data) {

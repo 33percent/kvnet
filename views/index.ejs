@@ -69,6 +69,32 @@ body {
             <li class="nav-item">
               <a class="nav-link" href="/materials">Teaching Materials</a>
             </li>
+            <li class = "nav-item">
+<a class = "nav-link"  id = "loginpop">Login </a>
+<div id = "loginpop1">
+   <div class="form-group">
+              
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                   
+                    <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username" required="Please enter a valid mail id" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                 
+                    <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required="Please enter your password" />
+                  </div>
+                </div>
+              </div>
+                            <div class="form-group ">
+              <input type = "button" class = "btn-primary" id = "logginingin" value = "Login">
+              </div>
+</div>
+            </li>
           </ul>
         </div>
       </div>
@@ -188,7 +214,44 @@ body {
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   </body>
 
 </html>
+<script type="text/javascript">
+
+$( document ).ready(function() {
+ $('#loginpop1').hide();
+});
+
+$("#loginpop").click(function(){
+  if($("#loginpop1").is(':visible') == false){
+   $('#loginpop1').show();
+  } else {
+      $('#loginpop1').hide();
+  }
+});
+
+$("#logginingin").click(function(){
+  var obj = {
+    username:$("#username").val(),
+    password:$('#password').val()
+  };
+  $.ajax({
+    url:'/login',
+    method:"get",
+    data:obj,
+    success:function(data){
+if((data.status == "success") && (data.data == "1")){
+ swal("successfully logged in");
+} else{
+  swal('error while loggin in');
+}
+    },
+    error:function(err){
+     
+    }
+  })
+})
+</script>
