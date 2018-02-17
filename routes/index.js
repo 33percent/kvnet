@@ -8,9 +8,14 @@ router.get('/', function(req, res, next) {
 
 router.get('/happypose',function(req,res,next){
   res.render('happypose');
+});
+
+router.get('/likemyschool',function(req,res,next){
+  res.render('likemyschool');
+});
+
+router.get('/register',function(req,res,next){
+  res.render('register');
 })
 
-router.get('/likeschool',function(req,res,next){
-  res.render('happypose');
-})
 module.exports = router;
