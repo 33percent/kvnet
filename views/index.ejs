@@ -69,6 +69,8 @@ body {
             <li class="nav-item">
               <a class="nav-link" href="/materials">Teaching Materials</a>
             </li>
+<% if (username == "none") { %>
+
             <li class = "nav-item">
 <a class = "nav-link"  id = "loginpop">Login </a>
 <div id = "loginpop1">
@@ -95,6 +97,15 @@ body {
               </div>
 </div>
             </li>
+<% } else { %>
+            <li class="nav-item">
+            <a class="nav-link"> Hi <%= username %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+
+<% } %>
           </ul>
         </div>
       </div>
@@ -243,8 +254,12 @@ $("#logginingin").click(function(){
     method:"get",
     data:obj,
     success:function(data){
+      console.log(data);
 if((data.status == "success") && (data.data == "1")){
  swal("successfully logged in");
+ setTimeout(function(){
+location.reload(true);
+ },2000)
 } else{
   swal('error while loggin in');
 }
