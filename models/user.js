@@ -10,4 +10,4 @@ var userschema = mongoose.Schema({
 });
 
 var users = mongoose.model("users", userschema);
-module.exports = users;
+module.exports 		= users;
