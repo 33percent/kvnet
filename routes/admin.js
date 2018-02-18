@@ -73,7 +73,14 @@
 
 
 router.get('/users',function(req,res,next){
-  // console.log('coming here')
+           musers.find({}, function(err, data) {
+              if (err) {
+                  console.log(err);
+              } else {
+res.render('admin/users',{data:data});
+
+              }
+          });
 })
 
 
