@@ -12,8 +12,11 @@ var admin = require('./routes/admin');
 var app = express();
 var ip = require('ip');
 var ipmodel = require('./models/ipstore');
+var getIP = require('ipware')().get_ip;
+app.use(function(req, res, next) {
+    var ipInfo = getIP(req);
 ipmodel.findOne({
-  'ip':ip.address()
+  'ip':ipInfo.clientIp
 }, function(err, data) {
   if (err) {
     console.log(err);
@@ -23,13 +26,13 @@ ipmodel.findOne({
     var updater = {'times':(data.times+1),
   time:new Date()};
     var ipold = {
-      ip:ip.address()
+      ip:ipInfo.clientIp
     };
     ipmodel.findOneAndUpdate(ipold, updater, {upsert:true}, function(err, doc){
     });
   } else {
     var ipofuser = new ipmodel({
-      ip: ip.address(),
+      ip: ipInfo.clientIp,
       time: new Date(),
       times:0
     });
@@ -44,6 +47,10 @@ ipmodel.findOne({
 
   }
 });
+    next();
+});
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
