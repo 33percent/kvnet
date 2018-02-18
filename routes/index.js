@@ -31,9 +31,25 @@ router.get('/likemyschool', function(req, res, next) {
 });
 
 router.get('/register', function(req, res, next) {
-    res.render('register');
+    try {
+        if (req.session.user) {
+            res.render('register', {
+                "username": req.session.user.name
+            });
+        } else {
+            res.render('register', {
+                "username": "none"
+            });
+        }
+    } catch (e) {
+        console.log(e);
+    }
 });
 
+router.post('/register',function(req,res,next){
+    console.log(req.body);
+    res.json(req.body);
+})
 router.get('/logout', function(req, res, next) {
     req.session.destroy();
     res.redirect('/');
