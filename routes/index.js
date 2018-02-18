@@ -5,19 +5,19 @@ var md5 = require('md5');
 var session = require('express-session')
 /* GET home page. */
 router.get('/', function(req, res, next) {
-try{
-	if(req.session.user){
-    res.render('index', {
-    	"username":req.session.user.name
-    });			
-} else{
-	       res.render('index', {
-    	"username":"none"
-    });	
-}	
-}catch(e){
-	console.log(e);
-}
+    try {
+        if (req.session.user) {
+            res.render('index', {
+                "username": req.session.user.name
+            });
+        } else {
+            res.render('index', {
+                "username": "none"
+            });
+        }
+    } catch (e) {
+        console.log(e);
+    }
 
 
 });
@@ -36,7 +36,7 @@ router.get('/register', function(req, res, next) {
 
 router.get('/logout', function(req, res, next) {
     req.session.destroy();
-   res.redirect('/');
+    res.redirect('/');
 });
 
 router.get('/login', function(req, res, next) {

@@ -37,7 +37,7 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top oldewr" id = "navibar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top oldewr" id="navibar">
         <div class="container">
             <a class="navbar-brand" href="/">Welcome to KVNET</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,25 +67,9 @@
                     <% if (username == "none") { %>
                         <li class="nav-item">
                             <a class="nav-link" id="loginpop">Login </a>
-                            <div id="loginpop1">
-                                <div class="form-group">
-                                    <div class="cols-sm-10">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username" required="Please enter a valid mail id" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="cols-sm-10">
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" required="Please enter your password" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group ">
-                                    <input type="button" class="btn-primary" id="logginingin" value="Login">
-                                </div>
-                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="loginpop">Register </a>
                         </li>
                         <% } else { %>
                             <li class="nav-item">
@@ -102,7 +86,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                  <img class="img-fluid rounded" src="/images/logo.png" alt="" height="1000" width="1500">
+                <img class="img-fluid rounded" src="/images/logo.png" alt="" height="1000" width="1500">
             </div>
             <div class="col-md-4">
                 <div class="card text-white bg-secondary my-4 text-center">
@@ -114,31 +98,49 @@
                 </div>
             </div>
             <div class="col-md-4">
+                <div id="loginpop1">
+                    <br>
+                    <div class="form-group">
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username" required="Please enter a valid mail id" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" required="Please enter your password" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <input type="button" class="btn-primary" id="logginingin" value="Login">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class = "container">
+    <div class="container">
         <div class="row">
-            <div class = "col-md-12">
-            <h1>About Us</h1>
-            <p>Kvnet.in is unique and an exclusive among the best resources on Kindergarten to lower, middle and the upper classes of school education in India, across the many stages of development of your children.</p>
-            <p>This database of schools across the states and Union Territories in India, gives you both a comprehensive and a focused view of the openings in places nearby to your home, and the village or the local body, panchayat, town, city or any further to a district, city, capital, metro or the state. Effort is made to represent all the rural and the urban areas in the Indian Sub continent. Effort is also made to represent schools for toddlers and preschoolers, as is to the adolescents. Added to this, is also a scope to add such institution, in case of its non availability.</p>
-            <a id = "expander" href = "JavaScript:void(0)">Click to know more</a>
-            <div id ="hodertext">
-            <p>Never before has such an opportunity been to the parents, teachers, students and the many other administrators, to connect and learn more about the many options that is available in the country. India has a variety of National, International and also state level boards of education, offering nursery, primary, upper primary / middle, secondary, and senior secondary / junior college levels of education.</p>
-           
-            <p>You can as well aim to promote your school by your likes and sharing, so to increase the visibility of the pride of your alma mater, to the many.</p>
-            <p>You may say more about your school and also post like messages to your school to view. This may help your school very much.</p>
-            <p>The schools may take a leaf or more from the viewer comments and also build on the profile and standing of the institution.</p>
-            <p>There can be a post, search and register for job offers and can also be some third party proposals to the schools.</p>
-            <p>The user value of kvnet.in is real large and you have begun to explore it now.</p>
-            <br>
-            <p>Happy landing & keeping with kvnet.in.</p>
-               <a id = "showless" href = "JavaScript:void(0)">Show less</a>
-            </div>
+            <div class="col-md-12">
+                <h1>About Us</h1>
+                <p>Kvnet.in is unique and an exclusive among the best resources on Kindergarten to lower, middle and the upper classes of school education in India, across the many stages of development of your children.</p>
+                <p>This database of schools across the states and Union Territories in India, gives you both a comprehensive and a focused view of the openings in places nearby to your home, and the village or the local body, panchayat, town, city or any further to a district, city, capital, metro or the state. Effort is made to represent all the rural and the urban areas in the Indian Sub continent. Effort is also made to represent schools for toddlers and preschoolers, as is to the adolescents. Added to this, is also a scope to add such institution, in case of its non availability.</p>
+                <a id="expander" href="JavaScript:void(0)">Click to know more</a>
+                <div id="hodertext">
+                    <p>Never before has such an opportunity been to the parents, teachers, students and the many other administrators, to connect and learn more about the many options that is available in the country. India has a variety of National, International and also state level boards of education, offering nursery, primary, upper primary / middle, secondary, and senior secondary / junior college levels of education.</p>
+                    <p>You can as well aim to promote your school by your likes and sharing, so to increase the visibility of the pride of your alma mater, to the many.</p>
+                    <p>You may say more about your school and also post like messages to your school to view. This may help your school very much.</p>
+                    <p>The schools may take a leaf or more from the viewer comments and also build on the profile and standing of the institution.</p>
+                    <p>There can be a post, search and register for job offers and can also be some third party proposals to the schools.</p>
+                    <p>The user value of kvnet.in is real large and you have begun to explore it now.</p>
+                    <br>
+                    <p>Happy landing & keeping with kvnet.in.</p>
+                    <a id="showless" href="JavaScript:void(0)">Show less</a>
+                </div>
             </div>
         </div>
-
     </div>
     <div class="row">
         <h1><a href = "/happypose" class = "newtext" >Happening Now. HappyPose 2018</a></h1>
@@ -167,11 +169,11 @@ $(document).ready(function() {
 
 $("#loginpop").click(function() {
     if ($("#loginpop1").is(':visible') == false) {
-      $("#navibar").css("background-color", "transparent")
+        $("#navibar").css("background-color", "transparent")
         $('#loginpop1').show();
     } else {
         $('#loginpop1').hide();
-    }    
+    }
 });
 $("#expander").click(function() {
     if ($("#hodertext").is(':visible') == false) {
@@ -180,16 +182,16 @@ $("#expander").click(function() {
     } else {
         $('#hodertext').hide();
     }
-    });
+});
 $("#showless").click(function() {
     if ($("#hodertext").is(':visible') == false) {
         $('#hodertext').show();
-        
+
     } else {
         $('#hodertext').hide();
-     $("#expander").show();
+        $("#expander").show();
     }
-    });
+});
 
 
 $("#logginingin").click(function() {
@@ -217,6 +219,4 @@ $("#logginingin").click(function() {
         }
     })
 })
-
-
 </script>

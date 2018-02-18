@@ -4,9 +4,9 @@
   var musers = require('../models/user.js');
   var md5 = require('md5');
   router.get('/', function(req, res, next) {
-          res.render('admin/login', {
-              error: req.query.error
-          });
+      res.render('admin/login', {
+          error: req.query.error
+      });
   });
 
   router.get('/dashboard', function(req, res, next) {
@@ -46,42 +46,42 @@
 
 
 
-  router.get('/insert', function (req, res, next) {
-  try{
-    var newuser = new musers({
-        name: "admin",
-        email: "sandeep",
-        phone: '9994370099',
-        passwordhash:'15978',
-        password:md5(md5("sandeep") + '15978')
-    });
-    console.log(newuser);
-    newuser.save(function (err, data) {
-        if (err) {
-            console.log(err);
-            res.send(err);
-        } else {
-            console.log(data);
-            res.send(data);
-        }
-    })
-  }catch(e){
-    console.log(e)
-  }
+  router.get('/insert', function(req, res, next) {
+      try {
+          var newuser = new musers({
+              name: "admin",
+              email: "sandeep",
+              phone: '9994370099',
+              passwordhash: '15978',
+              password: md5(md5("sandeep") + '15978')
+          });
+          console.log(newuser);
+          newuser.save(function(err, data) {
+              if (err) {
+                  console.log(err);
+                  res.send(err);
+              } else {
+                  console.log(data);
+                  res.send(data);
+              }
+          })
+      } catch (e) {
+          console.log(e)
+      }
 
   });
 
 
-router.get('/users',function(req,res,next){
-           musers.find({}, function(err, data) {
-              if (err) {
-                  console.log(err);
-              } else {
-res.render('admin/users',{data:data});
+  router.get('/users', function(req, res, next) {
+      musers.find({}, function(err, data) {
+          if (err) {
+              console.log(err);
+          } else {
+              res.render('admin/users', { data: data });
 
-              }
-          });
-})
+          }
+      });
+  })
 
 
 
